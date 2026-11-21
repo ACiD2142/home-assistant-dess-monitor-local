@@ -1,0 +1,54 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to a local DESS inverter",
+        "description": "The integration will probe the device and auto-detect its protocol, framing and TCP port. Nothing is sent to the internet.",
+        "data": {
+          "host": "IP address of the WiFi dongle",
+          "port": "TCP port (0 = auto-detect)",
+          "protocol": "Protocol",
+          "framing": "Wire framing",
+          "update_interval": "Poll interval (seconds)",
+          "timeout": "Connection timeout (seconds)",
+          "name": "Name"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "No inverter answered. Check the IP address, power-cycle the dongle, or try a specific port/protocol.",
+      "invalid_host": "Enter a valid IP address or hostname."
+    },
+    "abort": {
+      "already_configured": "This host is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "DESS Local options",
+        "data": {
+          "update_interval": "Poll interval (seconds)"
+        }
+      }
+    }
+  },
+  "selector": {
+    "protocol": {
+      "options": {
+        "auto": "Auto-detect (recommended)",
+        "axpert": "Axpert / PI30 (ASCII)",
+        "pi18": "PI18 (InfiniSolar)",
+        "smg2_modbus": "SMG2 Modbus RTU"
+      }
+    },
+    "framing": {
+      "options": {
+        "auto": "Auto-detect (recommended)",
+        "ascii": "ASCII (reply ends with CR)",
+        "rtu": "Raw Modbus RTU over TCP",
+        "modbus_tcp": "Modbus TCP (MBAP header)"
+      }
+    }
+  }
+}
